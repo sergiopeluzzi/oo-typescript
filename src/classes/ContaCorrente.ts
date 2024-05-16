@@ -6,9 +6,14 @@ export class ContaCorrente extends Conta {
     sacar(valor: number): void {
         if (valor <= this.saldo && valor > 0) {
             this.saldo -= valor;
-            this.saldo -= valor * this.txCPMF;
+            this.aplicarCPMF(valor);
         }
     }
+
+    private aplicarCPMF(valor: number): void {
+        this.saldo -= valor * this.txCPMF;
+    }
+
     mostrarSaldo(): void {
         console.log(`Saldo CC: ${this.saldo.toFixed(2)}`);
     }

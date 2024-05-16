@@ -36,8 +36,24 @@ export class App {
         // console.log("---------------------------------");
         // titular2.mostrarIdade();
         // console.log("---------------------------------");
-
         // const cp = new ContaPoupanca();
+        // const titular = new Titular(
+        //     "Sergio",
+        //     "802.954.602-53",
+        //     new Date("1985-11-25"),
+        //     "M"
+        // );
+        // const cp = new ContaPoupanca("1111", "2222", titular, 2);
+        // cp.depositar(1550);
+        // cp.mostrarSaldo();
+        // cp.calcularRendimento();
+        // console.log("===========================");
+        // const cc = new ContaCorrente("1111", "3333", titular);
+        // cc.depositar(1800);
+        // cc.mostrarSaldo();
+        // cc.sacar(500);
+        // cc.mostrarSaldo();
+
         const titular = new Titular(
             "Sergio",
             "802.954.602-53",
@@ -45,18 +61,10 @@ export class App {
             "M"
         );
 
-        const cp = new ContaPoupanca("1111", "2222", titular, 2);
-        cp.depositar(1550);
-        cp.mostrarSaldo();
-        cp.calcularRendimento();
-
-        console.log("===========================");
-
-        const cc = new ContaCorrente("1111", "3333", titular);
-        cc.depositar(1800);
-        cc.mostrarSaldo();
+        const cc = new ContaCorrente("1111", "2222", titular);
+        cc.depositar(1000);
         cc.sacar(500);
-        cc.mostrarSaldo();
+        console.log(cc);
     }
 }
 

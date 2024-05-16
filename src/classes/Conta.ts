@@ -1,10 +1,10 @@
 import { Titular } from "./Titular";
 
 export abstract class Conta {
-    agencia: string;
-    numero: string;
-    titular: Titular;
-    saldo: number;
+    private agencia: string;
+    private numero: string;
+    private titular: Titular;
+    protected saldo: number;
 
     constructor(agencia: string, numero: string, titular: Titular) {
         this.agencia = agencia;
@@ -13,17 +13,41 @@ export abstract class Conta {
         this.saldo = 0;
     }
 
-    depositar(valor: number) {
+    public depositar(valor: number) {
         this.saldo += valor;
     }
 
-    sacar(valor: number) {
+    public sacar(valor: number) {
         if (valor <= this.saldo && valor > 0) {
             this.saldo -= valor;
         }
     }
 
-    mostrarSaldo() {
+    public mostrarSaldo() {
         console.log(`Saldo: R$ ${this.saldo.toFixed(2)}`);
+    }
+
+    get getAgencia() {
+        return this.agencia;
+    }
+
+    set setAgencia(agencia: string) {
+        this.agencia = agencia;
+    }
+
+    get getNumero() {
+        return this.numero;
+    }
+
+    set setNumero(numero: string) {
+        this.numero = numero;
+    }
+
+    get getTitular() {
+        return this.titular;
+    }
+
+    set setTitular(titular: Titular) {
+        this.titular = titular;
     }
 }
